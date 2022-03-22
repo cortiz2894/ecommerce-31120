@@ -3,15 +3,15 @@ import './NavBar.css'
 import CartWidget from '../CartWidget/CartWidget'
 
 function NavBar(props) {
-    console.log(props)
+    //console.log(props)
     return(
         //JSX
         <header className='main-header'>
             <div className='container-logo'>
-            <img 
+            {/* <img 
                 src="logo192.png" 
                 className="img-header"
-            />
+            /> */}
             </div>
             <ul className='navbar'>
                 <li><Button className="custom-btn" variant="contained">Home</Button></li>
