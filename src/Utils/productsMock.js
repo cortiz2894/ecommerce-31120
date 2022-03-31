@@ -6,6 +6,14 @@ const mockProductos = [
         price: 1500,
         image: 'remera-1.jpg',
         category: 'remeras',
+        colors: [
+            {
+                hex: '#000000'
+            },,
+            {
+                hex: '#f44336'
+            }
+        ],
         stock: 3
     },
     {
@@ -15,6 +23,17 @@ const mockProductos = [
         price: 2500,
         image: 'remera3.jpeg',
         category: 'remeras',
+        colors: [
+            {
+                hex: '#000000'
+            },
+            {
+                hex: '#004da6'
+            },
+            {
+                hex: '#ffffff'
+            }
+        ],
         stock: 3
     },
     {
@@ -24,6 +43,11 @@ const mockProductos = [
         price: 1500,
         image: 'remera3.jpeg',
         category: 'remeras',
+        colors: [
+            {
+                hex: '#000000'
+            },
+        ],
         stock: 3
     },
     {
@@ -33,6 +57,14 @@ const mockProductos = [
         price: 3500,
         image: 'jean1.jpg',
         category: 'jeans',
+        colors: [
+            {
+                hex: '#000000'
+            },
+            {
+                hex: '#004da6'
+            },
+        ],
         stock: 6  
     },
     {
@@ -42,6 +74,17 @@ const mockProductos = [
         price: 1200,
         image: 'musculosa1.jpeg',
         category: 'musculosas',
+        colors: [
+            {
+                hex: '#000000'
+            },
+            {
+                hex: '#004da6'
+            },
+            {
+                hex: '#f44336'
+            }
+        ],
         stock: 6  
     }
 ]

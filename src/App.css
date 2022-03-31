@@ -131,3 +131,44 @@ p.info__subtitle {
   margin: 0px;
   margin-bottom: 10px;
 }
+
+.faq-section h3 {
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-family: 'Montserrat';
+}
+
+.faq-section p {
+    font-weight: 300;
+    font-size: 14px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form input {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-family: 'Montserrat';
+  width: 300px;
+  margin-bottom: 10px;
+  border: 1px solid black;
+}
+
+form > button {
+  background: black !important;
+  color: white !important;
+  border-radius: 0px !important;
+  width: 300px;
+  font-family: 'Montserrat' !important;
+}
+
+form > button:hover {
+  background: black !important;
+  color: white !important;
+}

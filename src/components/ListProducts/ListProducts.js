@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 
 const ListProducts = ({children}) => {
     const { category } = useParams()
+    const [contador, setContador] = useState(0)
 
     const [products, setProducts] = useState([])
 
@@ -17,7 +18,7 @@ const ListProducts = ({children}) => {
     useEffect( () => {
         setProducts([])
         getProducts().then( (productos) => {
-            filterProductByCategory(productos, category)
+            category ? filterProductByCategory(productos, category) : setProducts(productos)
         })
     }, [category])
 
@@ -30,11 +31,18 @@ const ListProducts = ({children}) => {
         })
     }
 
+    const agregarClick = (e, nombre) => {
+        e.stopPropagation()
+        console.log("Nombre desde el hijo:", nombre)
+        setContador(contador + 1)
+    }
+
     return(
         <div className="container-cards">
-            <h2> Productos en Oferta</h2>
+            <h2> Productos en Oferta </h2>
             {console.log("products: ", products)}
-            {products.map( ( product ) =>  <Card data={product} key={product.id}/>)}
+            <h1>CONTADOR: {contador}</h1>
+            {products.map( ( product ) =>  <Card data={product} key={product.id} action={agregarClick}/>)}
         </div>
     ) 
 }

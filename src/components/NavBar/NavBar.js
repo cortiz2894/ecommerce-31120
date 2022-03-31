@@ -1,9 +1,11 @@
 import Button from '@mui/material/Button';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import './NavBar.css'
 import CartWidget from '../CartWidget/CartWidget'
 
 function NavBar(props) {
+
     //console.log(props)
     const pages = [
     {
@@ -26,7 +28,7 @@ function NavBar(props) {
         //JSX
         <header className='main-header'>
             <div className='container-logo'>
-                <img src="logo.png" className="img-header"/>
+                <img src="../logo.png" className="img-header"/>
             </div>
             <ul className='navbar'>
                     <li>

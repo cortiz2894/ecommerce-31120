@@ -24,7 +24,7 @@ const DetailPage = () => {
         <Container className='container-general'> 
             <div className='container-detail'>
             <div className='container-detail__img'>
-                <img src="jean1.jpg" alt="jean" />
+                <img src={`../${product.image}`} alt="jean" />
             </div>
             <div className='container-detail__info'>
                 <h3 className='info__title'>{product.title}</h3>
@@ -33,8 +33,12 @@ const DetailPage = () => {
                 <p className='info__text'>{product.talle}</p>
                 <p className='info__subtitle'>COLOR</p>
                 <ul className='info__color'>
-                    <li style={{background: '#000000'}}></li>
-                    <li style={{background:'#004da6'}}></li></ul>
+                    {product.colors?.map( (color) => {
+                        return(
+                            <li style={{background: `${color.hex}`}}></li>
+                        )
+                    })}                    
+                </ul>
                 <p className='info__subtitle'>DETALLE</p>
                 <p className='info__text detail__text'>pantalon gabardina liviana con cintura elastica, teñido en prenda, slim fit 97%algodon 3%spandex</p>
                 <Button className='detail__btn-buy'>COMPRAR</Button>
