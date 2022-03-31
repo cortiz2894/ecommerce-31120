@@ -24,3 +24,7 @@
 .container-cards .card-item:nth-of-type(1) {
     margin-left: 0px;
 }
+
+.card-item img {
+    width: 100%;
+}
