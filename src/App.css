@@ -26,6 +26,11 @@ header.main-header li button {
   background: none;
   font-family: 'Montserrat';
   transition: all 0.2s ease;
+  color: white;
+}
+ul.MuiList-root a {
+  text-decoration: none;
+  color: black;
 }
 header.main-header li button:hover {
   background: none;
@@ -46,6 +51,7 @@ header.main-header li button:hover {
   box-shadow: 1px 1px 5px #0000002b;
   text-align: center;
   overflow: hidden;
+  transition: all 0.3s ease;  
 }
 .container-general {
   width: 1200px;
@@ -171,4 +177,99 @@ form > button {
 form > button:hover {
   background: black !important;
   color: white !important;
+}
+.btn-custom,.btn-custom:hover {
+  background: black !important;
+  border-radius: 0px !important;
+  color: white !important;
+  padding: 5px 20px !important;
+  font-family: 'Montserrat' !important;
+  width: 100% !important;
+}
+.btn-custom a {
+  color: white !important;
+}
+
+.cart-button svg {
+  color: white;
+}
+
+.cart-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-button p {
+  color: white;
+  margin-left: 6px;
+}
+
+.cart-modal .MuiPaper-root.MuiPaper-elevation p {
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+}
+
+.cart-modal .MuiMenu-list {
+  width: 300px;
+}
+
+.footer-modal-cart {
+  padding: 0px 10px;
+}
+
+.item-cart-modal {
+  display: flex;
+}
+
+.item-cart-modal__img {
+  overflow: hidden;
+  width: 30%;
+  height: 100px;
+}
+
+.item-cart-modal__info {
+  width: 60%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.item-cart-modal__action {
+  width: 10%;
+}
+
+.item-cart-modal__img img {
+  width: 100%;
+}
+
+.item-cart-modal__info p {
+  padding: 0px !important;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  font-size: 13px;
+  text-align: left !important;
+}
+
+
+/*Light Mode Styles*/
+header.main-header.light-mode {
+  background: white;
+}
+
+header.main-header.light-mode ul.navbar * {
+  color: black !important;
+  box-shadow: none;
+}
+
+.container-cards.light-mode .card-item * {
+  color: white;
+}
+
+.container-cards.light-mode .card-item {
+  background: black;
+}
+
+header.main-header.light-mode .cart-button * {
+  color: black;
 }

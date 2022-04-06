@@ -1,11 +1,13 @@
-import React,{useState, useEffect} from 'react'
+import React,{useState, useEffect, useContext} from 'react'
 import Card from '../Card/Card'
 import mockProductos from '../../Utils/productsMock'
 import { useParams } from 'react-router-dom'
+import ThemeContext from '../../context/ThemeContext'
+
 
 const ListProducts = ({children}) => {
+    const { lightTheme } = useContext(ThemeContext)
     const { category } = useParams()
-    const [contador, setContador] = useState(0)
 
     const [products, setProducts] = useState([])
 
@@ -31,18 +33,11 @@ const ListProducts = ({children}) => {
         })
     }
 
-    const agregarClick = (e, nombre) => {
-        e.stopPropagation()
-        console.log("Nombre desde el hijo:", nombre)
-        setContador(contador + 1)
-    }
 
     return(
-        <div className="container-cards">
+        <div className={`container-cards ${lightTheme ? 'light-mode' : ''}`}>
             <h2> Productos en Oferta </h2>
-            {console.log("products: ", products)}
-            <h1>CONTADOR: {contador}</h1>
-            {products.map( ( product ) =>  <Card data={product} key={product.id} action={agregarClick}/>)}
+            {products.map( ( product ) =>  <Card data={product} key={product.id} />)}
         </div>
     ) 
 }

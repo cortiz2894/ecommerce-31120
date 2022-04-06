@@ -28,3 +28,17 @@
 .card-item img {
     width: 100%;
 }
+
+.card-item__img {
+    height: 380px;
+    overflow: hidden;
+}
+
+.container-cards .card-item:nth-of-type(3n + 1) {
+    margin-left: 0px;
+}
+
+.card-item:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
