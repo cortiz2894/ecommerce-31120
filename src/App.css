@@ -273,3 +273,127 @@ header.main-header.light-mode ul.navbar * {
 header.main-header.light-mode .cart-button * {
   color: black;
 }
+
+/*CartPage*/
+
+.cart-section {}
+
+.cart-section .col-cart-table__head {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #cccccc;
+    margin-bottom: 20px;
+}
+
+.cart-section .col-cart-table__head h2 {
+    font-size: 14px;
+    text-align: left;
+}
+
+.cart-section .col-cart-table__head h2:nth-of-type(1) {
+    width: 10%;
+}
+
+.cart-section .col-cart-table__head h2:nth-of-type(2) {
+    width: 40%;
+}
+
+.cart-section .col-cart-table__head h2:nth-of-type(3) {
+    width: 10%;
+}
+
+.cart-section .col-cart-table__head h2:nth-of-type(4) {width: 10%;}
+
+.cart-section .col-cart-table__head h2:nth-of-type(5) {
+    width: 10%;
+}
+
+.cart-table__content {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.cart-table__content-img {
+    width: 10%;
+    overflow: hidden;
+}
+
+.cart-table__content-img img {
+    width: 100%;
+}
+
+.cart-table__content-title {
+    width: 40%;
+}
+
+.cart-table__content-price {
+    width: 10%;
+}
+
+.cart-table__content-quantity {
+    width: 10%;
+}
+.cart-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.cart-footer > button.btn-custom {
+  max-width: 300px;
+  height: fit-content;
+  background: white !important;
+  color: black !important;
+  border: 1px solid black;
+}
+
+.cart-checkout-details {
+  background: #fafafa;
+  padding-top: 10px;
+}
+
+.cart-checkout-details .cart-checkout__subtotal, .cart-checkout-details .cart-checkout__total {
+  padding: 0px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.cart-checkout__subtotal p, .cart-checkout__subtotal span {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.cart-checkout__total p, .cart-checkout__total span {
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.container-progress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 80vh;
+}
+
+button.btn-delete {
+  background: none;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  box-shadow: 1px 1px 5px #00000042;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button.btn-delete:hover {
+  transform: scale(1.09);
+}
