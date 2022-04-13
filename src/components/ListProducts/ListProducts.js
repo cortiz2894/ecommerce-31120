@@ -4,7 +4,8 @@ import mockProductos from '../../Utils/productsMock'
 import { useParams } from 'react-router-dom'
 import ThemeContext from '../../context/ThemeContext'
 import CircularProgress from '@mui/material/CircularProgress';
-
+import db from '../../firebase'
+import { collection, getDocs, query, where } from 'firebase/firestore'
 
 
 const ListProducts = ({children}) => {
@@ -15,12 +16,18 @@ const ListProducts = ({children}) => {
 
     const [products, setProducts] = useState([])
 
-    const getProducts = () => {
-        return new Promise((resolve, reject) => {
-            return setTimeout( () => { 
-                resolve(mockProductos)
-            } , 2000 )
-        })
+    const getProducts = async () => {
+        const itemsCollection = collection(db, 'productos')
+        const productosSnapshot = await getDocs(itemsCollection)
+        const productList = productosSnapshot.docs.map((doc) => {
+                let product = doc.data()
+                product.id = doc.id
+                console.log("product:", product)
+                return product
+            }
+        )
+        return productList
+
     } 
 
     useEffect( () => {

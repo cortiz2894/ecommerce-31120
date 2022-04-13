@@ -1,24 +1,34 @@
 import Container from '@mui/material/Container';
+import { useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import mockProductos from '../Utils/productsMock'
+import { doc, getDoc } from "firebase/firestore";
+import db from '../firebase'
 
 const DetailPage = () => {
-    const { id, category } = useParams()
+    const { id } = useParams()
+    const navigate = useNavigate()
     const [product, setProduct] = useState({})
+    const getProduct = async() => {
+        const docRef = doc(db, "productos", id);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+            console.log("Document data:", docSnap.data());
+            let product = docSnap.data()
+            product.id = docSnap.id
+            setProduct(product)
+          } else {
+            console.log("No such document!");
+            navigate('/error')
+          }
+    }
 
     useEffect( () => {
-        filterProductById(mockProductos, id)
+        getProduct()
     }, [id])
-
-    const filterProductById = (array , id) => {
-        return array.map( (product) => {
-            if(product.id == id) {
-                return setProduct(product)
-            }
-        })
-    }
     
     return(
         <Container className='container-general'> 

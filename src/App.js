@@ -30,9 +30,9 @@ function App() {
             <Routes>
               <Route path="/cart" element={<CartPage />}/>
               <Route path="/contacto" element={<ContactPage />}/>
-              <Route path="/" element={<HomePage />}/>
               <Route path="/:category/" element={<HomePage />}/>
               <Route path="/:category/:id" element={<DetailPage />}/>
+              <Route path="/" element={<HomePage />}/>
               <Route path="*" element={<NotFoundPage />}/>
             </Routes>
           </BrowserRouter>
