@@ -5,20 +5,15 @@ const CartContext = createContext();
 
 const CartProvider = ({children}) => {
     const [cartProducts, setCartProducts] = useState([])
+    const [totalPrice, setTotalPrice] = useState(0)
 
     const addProductToCart = (product) => {
         let exist = cartProducts.find(cartProduct => cartProduct.id === product.id)
-        !exist && setCartProducts(cartProducts => [...cartProducts, product])
-    }
-
-    const calculeTotalPrice = () => {
-        let total = 0
-
-        cartProducts.map( (cartProduct) => {
-           total = cartProduct.price + total
-        })
-
-        return total
+        if(!exist) { 
+            // setTotalPrice(totalPrice + product.price * product.quantity) 
+            setTotalPrice(totalPrice + product.price)
+            setCartProducts(cartProducts => [...cartProducts, product])
+        }
     }
 
     const deleteProduct = (product) => {
@@ -28,7 +23,7 @@ const CartProvider = ({children}) => {
     const data = {
         cartProducts,
         addProductToCart,
-        calculeTotalPrice,
+        totalPrice,
         deleteProduct
     }
 
