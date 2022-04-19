@@ -51,6 +51,8 @@ const CartPage = () => {
 
     const handleChange = (e) => {
         const {value, name} = e.target
+        console.log("value: ", value)
+        console.log("name: ", name)
 
         setFormData({
             ...formData,
